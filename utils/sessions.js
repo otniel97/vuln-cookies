@@ -21,7 +21,7 @@ function getSessionCredentials(app) {
         sessionCookie.cookie.domain = process.env.COOKIE_SESSION_DOMAIN;
         sessionCookie.cookie.secure = true;
         sessionCookie.cookie.httpOnly = true;
-        sessionCookie.cookie.sameSite = false;
+        sessionCookie.cookie.sameSite = none;
     }
 
     return sessionCookie;
