@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         var values = Object.assign({}, this.get());
         delete values.password;
         delete values.token;
+        delete values.cookie;
         delete values.createdAt;
         delete values.updatedAt;
         return values;
