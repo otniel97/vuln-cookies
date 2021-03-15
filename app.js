@@ -64,7 +64,8 @@ app.use(cookieParser());
 //Habilitar cors
 const corsOptions = {
     origin: [process.env.CLIENT_CORS_URL, 'http://localhost:3001'],
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    credentials: true
 };
 app.use(cors(corsOptions));
 
