@@ -18,6 +18,7 @@ async function authenticate(req, res, next) {
     }
 
     const cookies = req.cookies['connect.sid'];
+    req.headers.sessionId = req.headers.sessionid ? req.sessionid : req.headers.sessionId;
 
     if (!req.headers.sessionId || !cookies) //Verificar cookies ---- cookies || req.headers.cookies
         return res.status(400).send({
