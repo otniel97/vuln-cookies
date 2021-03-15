@@ -21,6 +21,7 @@ async function authenticate(req, res, next) {
     req.headers.sessionId = req.headers.sessionid ? req.sessionid : req.headers.sessionId;
     console.log("sesion id", req.sessionID)
     console.log("headers2", req.headers)
+    console.log(req.cookies)
 
     if (!req.headers.sessionId || !cookies) //Verificar cookies ---- cookies || req.headers.cookies
         return res.status(400).send({
