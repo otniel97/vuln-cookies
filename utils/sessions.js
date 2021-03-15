@@ -20,7 +20,8 @@ function getSessionCredentials(app) {
     if (app.get('env') === 'production') {
         sessionCookie.cookie.domain = process.env.COOKIE_SESSION_DOMAIN;
         sessionCookie.cookie.secure = true;
-        sessionCookie.cookie.httpOnly = false;
+        sessionCookie.cookie.httpOnly = true;
+        sessionCookie.cookie.sameSite = "none";
     }
 
     return sessionCookie;
