@@ -18,8 +18,7 @@ async function authenticate(req, res, next) {
     }
     console.log("headers1", req.headers)
     const cookies = req.cookies['connect.sid'];
-    req.headers.sessionId = req.headers.sessionid ? req.sessionid : req.headers.sessionId;
-    console.log("sesion id", req.sessionID)
+    req.headers.sessionId = req.headers.sessionid;
     console.log("headers2", req.headers)
     console.log(req.cookies)
 
