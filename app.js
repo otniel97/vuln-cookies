@@ -40,7 +40,7 @@ app.use(json());
 
 //Ip request
 app.use(requestIp.mw());
-app.set('trust proxy', true)
+app.set('trust proxy', 1)
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
