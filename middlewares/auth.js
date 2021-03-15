@@ -16,9 +16,11 @@ async function authenticate(req, res, next) {
             message: "No se ha encontrado header de autorización"
         });
     }
-
+    console.log("headers1", req.headers)
     const cookies = req.cookies['connect.sid'];
     req.headers.sessionId = req.headers.sessionid ? req.sessionid : req.headers.sessionId;
+    console.log("sesion id", req.sessionID)
+    console.log("headers2", req.headers)
 
     if (!req.headers.sessionId || !cookies) //Verificar cookies ---- cookies || req.headers.cookies
         return res.status(400).send({
