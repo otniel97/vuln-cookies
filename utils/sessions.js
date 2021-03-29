@@ -19,7 +19,7 @@ function getSessionCredentials(app) {
 
     if (app.get('env') === 'production') {
         sessionCookie.cookie.secure = true;
-        sessionCookie.cookie.httpOnly = false;
+        sessionCookie.cookie.httpOnly = true;
         sessionCookie.cookie.sameSite = 'none';
     }
 
