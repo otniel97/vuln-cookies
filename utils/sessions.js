@@ -17,6 +17,14 @@ function getSessionCredentials(app) {
         }
     };
 
+    if (app.get('env') === 'production') {
+        sessionCookie.cookie.domain = process.env.COOKIE_SESSION_DOMAIN;
+        sessionCookie.cookie.secure = true;
+        sessionCookie.cookie.httpOnly = false;
+        sessionCookie.cookie.sameSite = 'none';
+    }
+
+    console.log(sessionCookie)
 
     return sessionCookie;
 }
