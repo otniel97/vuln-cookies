@@ -13,7 +13,7 @@ function getSessionCredentials(app) {
         saveUninitialized: true,
         cookie: {
             path: '/',
-            maxAge: parseInt(process.env.COOKIE_SESSION_EXPIRATION)
+            maxAge: new Date(Date.now() + (30 * 86400 * 1000))
         }
     };
 
