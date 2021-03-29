@@ -20,13 +20,13 @@ async function authenticate(req, res, next) {
     const cookies = req.cookies['connect.sid'];
     req.headers.sessionId = req.headers.sessionid;
     console.log("headers2", req.headers)
-    console.log(req.cookies)
+    console.log(cookies)
 
     if (!req.headers.sessionId || !cookies) //Verificar cookies ---- cookies || req.headers.cookies
         return res.status(400).send({
-        ok: false,
-        message: `Error del cliente`,
-    });
+            ok: false,
+            message: `Error del cliente`,
+        });
 
     var token = req.headers.authorization.split(" ")[1];
     token = JSON.parse(decrypt(token));
